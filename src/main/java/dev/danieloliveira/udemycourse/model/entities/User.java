@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name="tb_user")
+@Table(name = "tb_user")
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +19,11 @@ public class User implements Serializable {
     private String phone;
     private String password;
     @JsonIgnore
-    @OneToMany(mappedBy="client")
+    @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
-    public User(){}
+    public User() {
+    }
 
     public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
